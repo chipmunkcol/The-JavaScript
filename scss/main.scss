@@ -1,0 +1,68 @@
+body,
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+@mixin textCenter {
+  text-align: center;
+  @content;
+}
+
+nav {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  background-color: rgb(73, 64, 64);
+  color: whitesmoke;
+
+  .nav-items {
+    display: flex;
+    gap: 20px;
+  }
+}
+
+h1 {
+  @include textCenter;
+}
+
+article {
+  width: 612px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  img {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .food-item {
+    height: 312px;
+    background-color: cornsilk;
+    border-radius: 10px;
+    overflow: hidden;
+
+    @include textCenter;
+    &-content {
+      height: 100px;
+      h3 {
+        font-size: 24px;
+      }
+      button {
+        background-color: rgb(252, 184, 57);
+        color: white;
+        border-radius: 5px;
+        border: none;
+        padding: 9px;
+        margin-top: 10px;
+        cursor: pointer;
+      }
+    }
+  }
+}
