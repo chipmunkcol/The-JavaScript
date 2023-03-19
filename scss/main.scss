@@ -6,6 +6,12 @@ p {
   margin: 0;
 }
 
+@mixin media_phone {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
 @mixin textCenter {
   text-align: center;
   @content;
@@ -40,6 +46,10 @@ article {
     height: 200px;
     width: 100%;
     object-fit: cover;
+  }
+  @include media_phone {
+    width: 70%;
+    grid-template-columns: 1fr;
   }
 
   .food-item {
